@@ -2,13 +2,13 @@
 
 use the GIPHY API to make a dynamic web page that populates with gifs of your choice. To finish this task, you must call the GIPHY API and use JavaScript and jQuery to change the HTML of your site.
 
-Instructions
+## Instructions
 
 Before you can make any part of your site work, you need to create an array of strings, each one related to a topic that interests you. Save it to a variable called topics.
 
 We chose animals for our theme, but you can make a list to your own liking.
 
-Your app should take the topics in this array and create buttons in your HTML.
+Your app should take the topics in this array and create buttons in your HTML. (// CREATE BUTTONS ELEMENTS? OR INPUT BUTTONS?)
 
 Try using a loop that appends a button for each string in the array.
 
@@ -24,7 +24,7 @@ Add a form to your page that takes a value from a user input box and adds it to 
 Deploy your assignment to Github Pages.
 Rejoice! You just made something really cool.
 
-Bonus Goals
+## Bonus Goals
 
 Ensure your app is fully mobile responsive.
 
@@ -40,6 +40,6 @@ Allow users to add their favorite gifs to a favorites section.
 This should persist even when they select or add a new topic.
 If you are looking for a major challenge, look into making this section persist even when the page is reloaded(via localStorage or cookies).
 
+## Notes
 
 1. dont forget event.preventDefault();
-
