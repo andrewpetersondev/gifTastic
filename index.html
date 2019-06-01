@@ -6,14 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>gifTastic</title>
+    <!-- link to css -->
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
 
-    <!-- Added link to the jQuery Library -->
+    <div class="container">
+
+        <div id="theme-buttons"></div>
+
+        <form id="theme-form">
+            <label for="theme-input">Add a button of -blank- !</label>
+            <input type="text" name="" id="theme-input">
+            <input type="submit" id="form-button" value="Submit">
+
+        </form>
+
+        <div id="gif-display"></div>
+
+    </div>
+
+    <!-- link to the jQuery Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- added link to javascript -->
+    <!-- link to javascript -->
     <script src="./assets/javascript/app.js"></script>
 
 </body>
