@@ -22,7 +22,13 @@ function createButton(topic) {
 $("#form-button").on("click", function (event) {
     event.preventDefault();
     var theme = $("#theme-input").val().trim();
-    createButton(theme);
+    // if falsy
+    if (!theme) {
+        return;
+    } else {
+        createButton(theme);
+    }
+
 });
 
 // when clicking a ".button-gif" 10 gifs are showed
@@ -73,7 +79,8 @@ function displayGifs() {
 // when clicking a gif toggle animate
 $(document).on("click", ".gif", toggleImage);
 
-function toggleImage () {
+
+function toggleImage() {
     var picture = $(this).attr("src");
     $(this).attr("src", $(this).attr("altsrc"));
     $(this).attr("altsrc", picture);
