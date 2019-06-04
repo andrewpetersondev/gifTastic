@@ -1,6 +1,6 @@
 var topics = ["Archer", "Game of Thrones", "Family Guy", "Silcon Valley", "Billions"];
 
-//apiKEY = "3w5nIdweFvSzSHVTMQ5JJUSte5wVyWqr";
+// api_key=3w5nIdweFvSzSHVTMQ5JJUSte5wVyWqr
 
 // on reload create dynamic buttons 
 for (var i = 0; i < topics.length; i++) {
@@ -26,9 +26,10 @@ $("#form-button").on("click", function (event) {
 });
 
 // when clicking a ".button-gif" 10 gifs are showed
-$(document).on("click", ".button-gif", function () {
+$(document).on("click", ".button-gif", displayGifs);
 
-    // empty display every time a  ".button-gif" is clicked
+function displayGifs() {
+    // empty display every time a ".button-gif" is clicked
     $("#gif-display").empty();
 
     var show = $(this).text();
@@ -61,6 +62,9 @@ $(document).on("click", ".button-gif", function () {
             // create and store an image 
             var image = $("<img>");
 
+            // add class .gif
+            image.addClass("gif");
+
             // Setting the src attribute of the image to a property pulled off the result item
             image.attr("src", results[i].images.fixed_height_still.url);
 
@@ -71,16 +75,7 @@ $(document).on("click", ".button-gif", function () {
 
         }
 
-
-
     })
-
-
-
-
-})
-
-
-
+}
 
 // when clicking a gif toggle animate
