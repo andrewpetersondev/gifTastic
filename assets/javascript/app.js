@@ -69,8 +69,9 @@ function displayGifs() {
             // Setting the src attribute of the image to a property pulled off the result item
             image.attr("src", results[i].images.fixed_height_still.url);
             image.attr("altsrc", results[i].images.fixed_height.url);
-            gifDiv.append(p);
+            // append dynamic variables to html
             gifDiv.append(image);
+            gifDiv.append(p);
             $("#gif-display").append(gifDiv);
         }
     })
@@ -78,7 +79,6 @@ function displayGifs() {
 
 // when clicking a gif toggle animate
 $(document).on("click", ".gif", toggleImage);
-
 
 function toggleImage() {
     var picture = $(this).attr("src");
