@@ -52,30 +52,29 @@ function displayGifs() {
 
         // loop through each item in results
         for (var i = 0; i < results.length; i++) {
-
             // create a div for the gif result
             var gifDiv = $("<div>");
-
             // create a paragraph tag with the result items rating
             var p = $("<p>").text("Rating: " + results[i].rating);
-
             // create and store an image 
             var image = $("<img>");
-
             // add class .gif
             image.addClass("gif");
-
             // Setting the src attribute of the image to a property pulled off the result item
             image.attr("src", results[i].images.fixed_height_still.url);
-
+            image.attr("altsrc", results[i].images.fixed_height.url);
             gifDiv.append(p);
             gifDiv.append(image);
-
             $("#gif-display").append(gifDiv);
-
         }
-
     })
 }
 
 // when clicking a gif toggle animate
+$(document).on("click", ".gif", toggleImage);
+
+function toggleImage () {
+    var picture = $(this).attr("src");
+    $(this).attr("src", $(this).attr("altsrc"));
+    $(this).attr("altsrc", picture);
+}
