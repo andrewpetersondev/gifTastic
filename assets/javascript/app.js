@@ -25,7 +25,15 @@ $("#form-button").on("click", function (event) {
     event.preventDefault();
     var theme = $("#theme-input").val().trim();
     createButton(theme);
-})
+});
 
 // when clicking a button 10 gifs are showed
+
+$(document).on("click", ".button-gif" ,function(){
+    var show = $(this);
+    console.log(show.text());
+    // console.log(show);
+})
+
+
 // when clicking a gif toggle animate
