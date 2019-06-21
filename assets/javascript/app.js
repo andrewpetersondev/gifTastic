@@ -1,11 +1,12 @@
-var topics = ["Archer", "Game of Thrones", "Family Guy", "Silcon Valley", "Billions"];
-
+// global variables
+// ======================================================================================================================================
 // api_key=3w5nIdweFvSzSHVTMQ5JJUSte5wVyWqr
+var topics = ["Archer", "Game of Thrones", "Family Guy", "Silicon Valley", "Billions"];
 
-// on reload create dynamic buttons 
-for (var i = 0; i < topics.length; i++) {
-    createButton(topics[i]);
-}
+
+
+// functions
+// ======================================================================================================================================
 
 function createButton(topic) {
     // create a button
@@ -18,44 +19,20 @@ function createButton(topic) {
     $("#theme-buttons").append(btn);
 }
 
-// from input (when submitted) create a dynamic button
-$("#form-button").on("click", function (event) {
-    event.preventDefault();
-    var theme = $("#theme-input").val().trim();
-    // if falsy
-    if (!theme) {
-        return;
-    } else {
-        createButton(theme);
-    }
-
-});
-
-// when clicking a ".button-gif" 10 gifs are showed
-$(document).on("click", ".button-gif", displayGifs);
-
 function displayGifs() {
     // empty display every time a ".button-gif" is clicked
     $("#gif-display").empty();
-
     var show = $(this).text();
-
     console.log(show);
-
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + show + "&api_key=3w5nIdweFvSzSHVTMQ5JJUSte5wVyWqr&limit=10";
-
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-
         console.log(queryURL);
         console.log(response);
-
         var results = response.data;
-
         console.log(results);
-
         // loop through each item in results
         for (var i = 0; i < results.length; i++) {
             // create a div for the gif result
@@ -77,11 +54,35 @@ function displayGifs() {
     })
 }
 
-// when clicking a gif toggle animate
-$(document).on("click", ".gif", toggleImage);
-
 function toggleImage() {
     var picture = $(this).attr("src");
     $(this).attr("src", $(this).attr("altsrc"));
     $(this).attr("altsrc", picture);
 }
+
+
+// main processes
+// ======================================================================================================================================
+
+// on reload create dynamic buttons 
+for (var i = 0; i < topics.length; i++) {
+    createButton(topics[i]);
+}
+
+// from input (when submitted) create a dynamic button
+$("#form-button").on("click", function (event) {
+    event.preventDefault();
+    var theme = $("#theme-input").val().trim();
+    // if falsy
+    if (!theme) {
+        return;
+    } else {
+        createButton(theme);
+    }
+});
+
+// when clicking a ".button-gif" 10 gifs are showed
+$(document).on("click", ".button-gif", displayGifs);
+
+// when clicking a gif toggle animate
+$(document).on("click", ".gif", toggleImage);
