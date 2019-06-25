@@ -41,11 +41,12 @@ function displayGifs() {
         // create a div for each item in response and give it content and attributes
         for (var i = 0; i < results.length; i++) {
             var gifDiv = $("<div>");
-            var p = $("<p>").text("Rating: " + results[i].rating);
             var image = $("<img>");
             image.addClass("gif");
             image.attr("src", results[i].images.fixed_height_still.url);
             image.attr("altsrc", results[i].images.fixed_height.url);
+            var p = $("<p>").text("Rating: " + results[i].rating);
+            // output to html
             gifDiv.append(image);
             gifDiv.append(p);
             $("#gif-display").append(gifDiv);
@@ -70,7 +71,7 @@ function toggleImage() {
 // ======================================================================================================================================
 $(document).ready(function () {
 
-    // on load create dynamic buttons 
+    // on page load create buttons 
     for (var i = 0; i < topics.length; i++) {
         createButton(topics[i]);
     };

@@ -1,5 +1,9 @@
 # gifTastic
 
+## Take a look
+
+**[gifTastic](https://andrewpetersondev.github.io/gifTastic/)**
+
 ## Technologies Used
 
 - HTML 5
