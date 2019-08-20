@@ -1,24 +1,18 @@
 // global variables
 // ======================================================================================================================================
-// api_key=3w5nIdweFvSzSHVTMQ5JJUSte5wVyWqr
 
 // initial buttons when page loads
 var topics = ["Archer", "Game of Thrones", "Family Guy", "Silicon Valley", "Billions"];
-
-
 
 // functions
 // ======================================================================================================================================
 
 function createButton(topic) {
-
     // create a button     // add text to button     // add class to button     // append to html
-
     var btn = $("<button>");
     btn.text(topic);
     btn.addClass("button-gif");
     $("#theme-buttons").append(btn);
-
 }
 
 function displayGifs() {
@@ -29,7 +23,7 @@ function displayGifs() {
     var show = $(this).text();
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + show + "&api_key=3w5nIdweFvSzSHVTMQ5JJUSte5wVyWqr&limit=10";
 
-    // ajax call
+    // ajax call to giphy api
     $.ajax({
         url: queryURL,
         method: "GET"
